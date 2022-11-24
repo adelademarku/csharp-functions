@@ -29,13 +29,17 @@ StampaArrayInteri(arrayDiNumeriAlQuadrato);
 Console.WriteLine("Array di numeri originale: ");
 StampaArrayInteri(arrayNumeri);
 
-Console.WriteLine("Somma array di numeri originale: ");
+//somma 
+
 StampaSommaArrayNumeri(arrayNumeri);
+
+
 
 int[] arraySommaDiNumeriAlQuadrato = StampaSommaArrayNumeriQuadrato(arrayNumeri);
 
 Console.WriteLine("Somma array di numeri al quadrato: ");
-StampaSommaArrayNumeri(arraySommaDiNumeriAlQuadrato); 
+
+StampaSommaArrayNumeri(arraySommaDiNumeriAlQuadrato);
 
 
 
@@ -72,36 +76,37 @@ int[] QuadratoArrayNumeri(int[] arrayNumeri)
 
 }
 
-//stanpa somma copia array 
-int [] StampaSommaArrayNumeriQuadrato(int[] arrayNumeri)
-{
-    int somma = 0;
-    int[] copiaArraySomma = (int[])arrayNumeri.Clone();
-    for (int i = 0; i <= copiaArraySomma.Length - 1; i = i + 1)
-    {
-        somma = somma + copiaArraySomma[i];
-       
-    }
-
-    return copiaArraySomma;
-  
-}
-
 //Stampa somma array 
 
-int[] StampaSommaArrayNumeri(int[] arrayNumeri)
+void  StampaSommaArrayNumeri(int[] arrayNumeri)
 {
     int somma = 0;
 
     for (int i = 0; i <= arrayNumeri.Length - 1; i = i + 1)
     {
-        somma = somma + arrayNumeri[i];
+        somma += arrayNumeri[i];
 
     }
 
-    return 0; 
-
+    Console.WriteLine("La somma vale: "+somma);
 }
+
+//stanpa somma copia array 
+int[] StampaSommaArrayNumeriQuadrato(int[] arrayNumeri)
+{
+    int somma = 0;
+    int[] copiaArray = (int[])arrayNumeri.Clone();
+    for (int i = 0; i <= copiaArray.Length - 1; i = i + 1)
+    {
+        somma +=  copiaArray[i];
+       
+    }
+
+    return copiaArray;
+  
+}
+
+
 
 
 //Funzione che da il quadrato di un numero passato come parametro.
